@@ -1,0 +1,59 @@
+.btn {
+  display: inline-block;
+  border-radius: 35px;
+  touch-action: manipulation;
+  position: relative;
+  min-width: 160px;
+  max-width: 320px;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: inherit;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  white-space: normal;
+  word-wrap: normal;
+  cursor: pointer;
+  color: inherit;
+  border-width: 2px;
+  border-style: solid;
+  transition: background 0.2s ease-out;
+  background: transparent;
+  @include media('480'){
+    font-size: 12px;
+  }
+  &--colorname {
+    color: #000;
+    background-color: $yellow;
+    border-color: $yellow;
+    &:hover {
+      background-color: darken($yellow, 5%);
+    }
+  }
+  &--block {
+    width: 100%;
+    max-width: 100%;
+  }
+  &--border {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  &--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &:disabled {
+    pointer-events: none;
+    opacity: .5;
+  }
+}

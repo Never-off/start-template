@@ -1,0 +1,36 @@
+// Colors
+$red: #e5372d;
+$black: #2b2b2b;
+$yellow: #ffd011;
+$blue: #2b8cc4;
+
+// Fonts
+$font-text: 'IBM Plex Sans','Arial', sans-serif;
+$font-ttl: 'IBM Plex Sans','Arial', sans-serif;
+
+// Sizes
+$base-font-size: 16px;
+$content-size: 1200px;
+
+$breakpoints: (
+  "400"  : 400px,
+  "480"  : 480px,
+  "560"  : 560px,
+  "640"  : 640px,
+  "768"  : 768px,
+  "1024" : 1024px,
+  "1200" : 1200px,
+  "1440" : 1440px
+);
+
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

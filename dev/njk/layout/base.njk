@@ -1,0 +1,18 @@
+{% set company = "My random company" %}
+	{% if not(title) %}
+    {% set title = "Default title" %}
+  {% endif %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% include "../tpl/head.njk" %}
+</head>
+<body>
+  <div class="wrapper">
+    {% include "../tpl/header.njk" %}
+    {% block content %}{% endblock %}
+    {% include "../tpl/footer.njk" %}
+  </div>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
