@@ -1,0 +1,49 @@
+☐ Подключить в стилях файл main-nav.scss с базовой разметкой
+☐ в файле buttons.scss Переименовать btn в button? добавить стиль для кнопки по умолчанию
+☐ Добавить в gulp.js таск по обработке картинок
+☐ Добавить таблицу стилей для content-editor
+
+
+
+
+
+Стили для Content-editor
+
+.content-editor {
+  a {
+    color: $dark-pink;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  p {
+    margin: 0 0 20px 0;
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    counter-reset: list;
+    li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:before {
+        counter-increment: list;
+        content: counter(list) '.';
+        font-weight: bold;
+        margin: 0 10px 0 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
